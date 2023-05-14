@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greeting Card</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card-container {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            perspective: 800px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: transform 2.0s, opacity 0.5s;
+            transform-style: preserve-3d;
+            /* animation: float 3s infinite; */
+            
+        }
+
+        .card-back {
+            display: none;
+            /* position: absolute; */
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transform: rotateY(-180deg);
+            transform-style: preserve-3d;
+            animation: pulse 2s infinite;
+
+        }
+
+        .card-container:hover .card {
+            transform: rotateY(180deg);
+            opacity: 0;
+        }
+
+        .card-container:hover .card-back {
+            display: block;
+            transform: rotateY(2deg);
+            opacity: 1;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            max-height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <h1>Hey Favourites!</h1>
+            <p>add sme content here </p>
+        </div>
+        <div class="card-back">
+            <img src="image.jpg" alt="Image">
+            <h1>back side</h1>
+            <p>some one d content</p>
+        </div>
+    </div>
+</body>
+</html>

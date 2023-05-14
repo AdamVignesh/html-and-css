@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greeting Card</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+           
+      /* background-image: url('C:/Users/HP/Downloads/giphy.gif');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+     */
+
+        }
+     
+        .card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            overflow: hidden;
+            width: 500px;
+            height: 300px;
+            top:170px;
+            right: 300px;
+            transition: transform 2.0s, opacity 0.5s;
+            transform-style: preserve-3d;
+            animation: float 4s infinite;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-10px);
+            }
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top:300px;
+            right: 30px;
+            left: 80%;
+            transform: translateX(50%);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #ff8080;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            animation: heart 2s infinite;
+        }
+     
+        @keyframes heart {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+        @keyframes moveRight {
+            0% { left: 0; }   
+            100% { left: 80%; }
+        }
+        .moving-text {
+            position: relative;
+            animation: moveRight 3s linear infinite;
+        }
+        .card-back{
+            display: none;
+            position: absolute;
+            width: 500px;
+            height: 300px;
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            top:170px;
+            right: 300px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transform: rotateX(-180deg);
+            transform-style: preserve-3d;  
+        }
+
+        .card-container:hover .card {
+            transform: rotateY(30deg);
+            opacity: 0;
+        }
+
+        .card-container:hover .card-back {
+            display: block;
+            transform: rotateY(2deg);
+            opacity: 1;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            max-height: 380px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color:black;
+            font-size: 24px;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        p {
+            align-items: center;
+            color:yellowgreen;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <h1>Hey Favourites!</h1>
+            <p>From "Up All Night" to "Made in the AM" we all grew up</p>
+            <img src="C:\Users\HP\Downloads\oned.png" alt="Image">
+
+        </div>
+        <div class="card-back">
+            <h1>Dear One Direction</h1>
+            <p>Aint it funny how the tables turn around in just a period of few years.</p>
+            <p>Thanks for letting me know that <span style="color:#ff8080">"If you ever feel alone — don't."</span>- Harry </p>
+            <p>I love how directioners are clowning even past the 18 months,<span style="color:#ff8080">"hopping that u'll understand"</span>"</p>
+            <p style="margin-left:400px; color:#ff8080">-Adam</p>
+            <br>
+            <p style="color:black"class="moving-text">Reunite soon</p>
+        </div>
+    </div>
+</body>
+</html>
