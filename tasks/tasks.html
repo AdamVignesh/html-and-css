@@ -1,0 +1,152 @@
+<html>
+    <head>
+        <script>
+            function calcDiscount()
+            {
+                var price = parseFloat(document.getElementById("billAmount").value);
+
+                var currentDate = new Date();   
+                var currentDay = currentDate.getDay();
+                
+                switch (currentDay)
+                {
+                    case 1:
+                        var result = price -(price * 15)/100;
+                        document.getElementById("p1").innerHTML = "Rs."+result;
+                        break;
+
+                    case 2:
+                        var result = price -(price * 10)/100;
+                        document.getElementById("p1").innerHTML = "Rs."+result;
+                        break;
+            
+                    case 3:
+                        var result = price -(price * 12)/100;
+                        document.getElementById("p1").innerHTML = "Rs."+result;
+                        break;
+                
+                    case 4:
+                        var result = price -(price * 11)/100;
+                        document.getElementById("p1").innerHTML = "Rs."+result;
+                        break;
+                    
+                    case 5:
+                        var result = price -(price * 13)/100;
+                        document.getElementById("p1").innerHTML = "Rs."+result;
+                        break;
+                    
+                    case 6:
+                        var result = price -(price * 14)/100;
+                        document.getElementById("p1").innerHTML = "Rs."+result;
+                        break;
+                    
+                    case 7:
+                        var result = price -(price * 15)/100;
+                        document.getElementById("p1").innerHTML = "Rs."+result;
+                        break;
+                }
+
+
+                event.preventDefault();
+                
+            }
+
+            function admissionStatus ()
+            {
+                var mark = parseFloat(document.getElementById("mark").value);
+                
+                if(mark>90)
+                {
+                    document.getElementById("p2").innerHTML = "Outstanding to admit";
+                }
+                else if(mark>70)
+                {
+                    document.getElementById("p2").innerHTML = " Good to admit";
+                }
+                else if(mark>50)
+                {
+                    document.getElementById("p2").innerHTML = "Acceptable to admit";
+                }
+                else
+                {
+                    document.getElementById("p2").innerHTML = " Admission Application Rejected";
+                }
+                event.preventDefault();
+
+            }
+
+            function generateTextFields()
+            {
+                var container = document.getElementById("container"); 
+
+                var numberOfFields = parseInt(document.getElementById("noOfItems").value);
+
+                for (var i = 0; i < numberOfFields; i++) {
+                var input = document.createElement("input");        //creating the required no. of textfields
+                input.type = "num";
+                input.id = "price"+i;
+                container.appendChild(input);
+                }
+                var button = document.getElementById('btn1');
+                button.removeAttribute('hidden');
+                event.preventDefault();
+
+            }
+
+            function CalcVouchers()
+            {
+                var numberOfFields = parseInt(document.getElementById("noOfItems").value);
+                var prices = new Array(numberOfFields);   // array of prices
+
+                for (var i = 0; i < numberOfFields; i++) 
+                {
+                    prices[i] = parseInt(document.getElementById("price"+i).value);         //inserting the prices to the array
+                }
+                var vouchers = 100;
+                
+                prices.forEach(element => {
+                    if(element > 5000)
+                    {
+                        vouchers += 3000;
+                    }
+                    else if(element >3000)                        //calculating the voucher amount 
+                    {
+                        vouchers += 1500;
+                    }
+                    else if(element>1000)
+                    {
+                        vouchers += 500;
+                    }
+                });
+                document.getElementById("p3").innerHTML = 'Total Voucher amount is '+vouchers;
+
+            }
+        </script>
+    </head>
+    <body>
+        <form action="">
+            <label for="">Bill Amount</label>
+            <input type="num" id="billAmount">
+            <button onclick="calcDiscount()">Discounted Price</button>
+            <p id="p1">Discounted Price is</p>
+        </form>
+        <br><br>
+        <form action="">
+            <label for="">Entrance Mark</label>
+            <input type="num" id="mark">
+            <button onclick="admissionStatus()">Check Admission Status</button>
+            <p id="p2">Status:</p>
+        </form>
+        <br><br>
+
+        <div id="container">
+        <form action="">
+            <label for="">No of Items</label>
+            <input type="num" id="noOfItems">
+            <button onclick="generateTextFields()">Enter rates</button>
+        </form>
+    </div>
+    <button id="btn1" hidden onclick="CalcVouchers()">Get Vouchers</button>
+<p id="p3">Total Voucher amount:</p>
+    </body>
+</html>
