@@ -1,0 +1,44 @@
+body
+{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    margin:0;
+    padding:50px 100px;
+}
+#main
+{
+    width: 810px;
+}
+nav{
+    background: #03C988;
+    height:70px;
+}
+#name
+{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+#leftColumn
+{
+    display: inline-block;
+    background-color: aqua;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    width: 400px;
+}
+#rightColumn
+{
+    display: inline-block;
+    background-color:beige;
+    width: 400px;
+}
+#verticalLine {
+    display: inline-block;
+    width: 1px;
+    height: 600px; 
+    background-color: black;
+  }
