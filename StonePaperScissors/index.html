@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- css -->
+    <link rel="stylesheet" href="assets/styles.css">
+    
     <title>StonePaperScissors</title>
+
 </head>
 <body>
-    
+    <div class="game-arena">
+        <div class="players">
+            <div class="bot">
+                <img class="bot-img" src="assets/images/bot.png" alt="bot img">
+                <h2>Mr.Bot</h2>
+                <img class="botsChoice" src="assets/images/all.jpg" alt="lets play">
+            </div>
+            <div class="adam">
+                <img class="adam-img" src="assets/images/adam.png" alt="">
+                <h2>Adam</h2>
+                <img class="adamsChoice" src="assets/images/all.jpg" alt="lets play">
+            </div>
+        </div>
+        <div class="choices">
+            <select name="choices" id="choices">
+                <option value="">select</option>
+                <option value="stone">stone</option>
+                <option value="paper">paper</option>
+                <option value="scissors">scissors</option>
+            </select>
+        </div>
+    </div>
+    <!-- <center>
+        <button  >play</button>
+    </center> -->
 </body>
 </html>
