@@ -12,19 +12,27 @@
 
 </head>
 <body>
+    <nav>
+
+          <button onclick="newGame()">New Game</button>
+        
+      </nav>
     <div class="game-arena">
         <div class="players">
             <div class="bot">
-                <img class="bot-img" src="assets/images/bot.png" alt="bot img">
+                <img id="botPic" class="bot-img" src="assets/images/bot.png" alt="bot img">
                 <h2>Mr.Bot</h2>
-                <img class="botsChoice" src="assets/images/all.jpg" alt="lets play">
+                <img  class="botsChoice" src="assets/images/all.jpg" alt="lets play">
+                <p id="botPoints">points:0</p>
             </div>
             <div class="adam">
-                <img class="adam-img" src="assets/images/adam.png" alt="">
+                <img id="myPic" class="adam-img" src="assets/images/adam.png" alt="">
                 <h2>Adam</h2>
                 <img class="adamsChoice" src="assets/images/all.jpg" alt="lets play">
+                <p id="adamPoints">points:0</p>
             </div>
         </div>
+        <br>
         <div class="choices">
             <select name="choices" id="choices">
                 <option value="">select</option>
@@ -34,10 +42,16 @@
             </select>
         </div>
     </div>
-
+<br>
     <script src="assets/script.js"></script>
     <center>
-        <button onclick="getChoice()"  >play</button>
+        <button id="playBtn" onclick="getChoice()"  >play</button>
+        <br><br>
+        <div>
+            <h2 id="result"></h2>
+        </div>
+
+
     </center>
 </body>
 </html>
