@@ -1,0 +1,171 @@
+/* body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+*/
+*{  
+      background-color:#d9fcff;
+
+  }
+/* 
+  .section
+  {
+    display: flex;
+  } */
+
+  h1 {
+    font-size: 45px;
+  }
+  .highlight {
+    color: #BB0022;
+  }
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  .half {
+    width: 40%;
+    margin: auto;
+    float: left;
+    margin-left: 6%;
+  }
+  .banner {
+    background-image: url("./assets/banner.png");
+    background-repeat: no-repeat;
+    height: 50vh;
+  }
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    /* color: #ffffff; */
+    /* background-color: #000000; */
+    padding: 12px 30px;
+  }
+  .half p {
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: 35px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  .hero P {
+    margin-bottom: 30px;
+  }
+  .picture {
+    padding: 30px;
+  }
+
+  .Experience > h2 {
+    text-align: center;
+  }
+  .single {
+    box-shadow: 10px 10px 40px #808080;
+    height: 60%;
+    text-align: center;
+    padding: 10px 14px;
+  }
+
+  #Full-Stack {
+    border-left: 4px solid #000;
+    border-image: linear-gradient(#3a1c71, #d76d77, #ffaf7b);
+    border-image-slice: 1;
+    margin:50px ;
+    width: 450px;
+  }
+  #Learner {
+    border-left: 4px solid #000;
+    border-image: linear-gradient(#3a6186, #89253e);
+    border-image-slice: 1;
+    margin: 50px;
+    width: 450px;
+
+  }
+  footer {
+    text-align: center;
+    color: #181c32;
+  }
+
+  
+h1
+{
+    margin-left: 150px;
+    margin-right: 270px;
+    padding-top: 5px;
+    font-family: 'Lobster', cursive;}
+.name
+{
+    color:#DA0037;
+    font-size: 40px;    
+}
+
+
+ #header
+{
+    display: flex;
+    padding: 0px 0;
+    align-items:center;
+    justify-content:center;
+}
+
+#Active
+{
+    color: #DA0037;
+}
+
+#li
+{
+    display: inline-block;
+    margin: 10px 20px;
+    list-style: none;
+    font-family: 'Crimson Text', serif;
+    font-size: 17px;
+}
+
+@media (min-width: 200px) { 
+    #abstract
+    {
+        justify-content: center;
+        align-items: center  ;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 30px;
+
+    }
+    #intro {
+      margin-top: 100px;
+      margin-left: 100px;
+    }
+
+  }
+  
+  @media (min-width: 768px) { 
+    #intro {
+      margin-top: 230px;
+      margin-left: 100px;
+    }
+    
+    
+  }
+  
+  @media (min-width: 992px) { 
+    #intro {
+      margin-top: 230px;
+      margin-left: 100px;
+    }
+  } 
+
+  #abstract
+  {
+    margin-top: 150px;
+    max-width: 600px;
+  }
+  #myPic
+  {
+    width: 500px;
+  }
