@@ -1,37 +1,42 @@
 const carousel = document.querySelector('.carousel');
-const carouselSlide = document.querySelector('.carousel-slide');
+const carouselSlide = document.querySelectorAll('.carousel-slide');
 const prevButton = document.getElementById('prev');
 const nextButton = document.getElementById('next');
-const colorInput = document.getElementById('colorInput');
+const colorInput = document.querySelectorAll('.color');
+const label = document.querySelectorAll('#label');
 
-colorInput.addEventListener('input',()=>{
-    carousel.style.backgroundColor = colorInput.value;
-});
+
+
+colorInput.forEach(color=>color.addEventListener('input',(event)=>{
+  const changedColor = event.target.value;
+  event.target.parentNode.style.backgroundColor=changedColor;
+
+}))
 
 
 if (prevButton && nextButton) {
-  const slideWidth = carouselSlide.clientWidth;
+  const slideWidth = carouselSlide[0].clientWidth;
   let slideIndex = 0;
 
   prevButton.addEventListener('click', () => {
     console.log("in prev ra");
     slideIndex--;
     if (slideIndex < 0) {
-      slideIndex = carouselSlide.children.length - 1;
+      slideIndex = carouselSlide.length - 1;
     }
     updateSlidePosition();
   });
 
-  nextButton.addEventListener('click', () => {
+  nextButton.addEventListener('click', (event) => {
     slideIndex++;
-    if (slideIndex >= carouselSlide.children.length) {
+    if (slideIndex >= carouselSlide.length) {
       slideIndex = 0;
     }
     updateSlidePosition();
   });
 
   function updateSlidePosition() {
-    carousel.style.transform = `translateX(-${slideWidth * slideIndex}px)`;
+    carousel.style.transform = `translateX(${-slideWidth * slideIndex}px)`;
   }
 } else {
   console.error('Previous or Next button not found');
