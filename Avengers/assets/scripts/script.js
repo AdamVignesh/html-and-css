@@ -2,7 +2,7 @@ function initMap()
     {
     var options = {
         zoom : 5,
-        center :{lat:11.0056,lng:76.961632}
+        center :{lat:11.0056,lng:76.961632},
     }
     var map = new google.maps.Map(document.querySelector('#map'),options);
     // var marker = new google.maps.Marker({
@@ -16,29 +16,29 @@ function initMap()
         {
             coords:{lat:11.0056,lng:76.961632},
             icon:{url:"assets/images/timeStone.png", scaledSize:iconSize},
-            content:'<h1>Time Stone</h1>'
+            content:'<h1>Time Stone</h1>',
         },
         {
             coords:{lat:13.044403,lng:80.251648},
             icon:{url:"assets/images/spaceStone.png", scaledSize:iconSize},
-            content:'<h1>Space Stone</h1>'
+            content:'<h1>Space Stone</h1>',
         },
         {
             coords:{lat:10.9600778,lng:78.0766036},
             icon:{url:"assets/images/realityStone.png", scaledSize:iconSize},
-            content:'<h1>Reality Stone</h1>'
+            content:'<h1>Reality Stone</h1>',
         },{
             coords:{lat:21.0000,lng:78.0000},
             icon:{url:"assets/images/mindStone.png", scaledSize:iconSize},
-            content:'<h1>Mind Stone</h1>'
+            content:'<h1>Mind Stone</h1>',
         },{
             coords:{lat:12.971891,lng:77.641151},
             icon:{url:"assets/images/powerStone.png", scaledSize:iconSize},
-            content:'<h1>Power Stone</h1>'
+            content:'<h1>Power Stone</h1>',
         },{
             coords:{lat:17.439930 ,lng:78.498276},
             icon:{url:"assets/images/soulStone.png", scaledSize:iconSize},
-            content:'<h1>Soul Stone</h1>'
+            content:'<h1>Soul Stone</h1>',
         }
 
     ];
@@ -53,6 +53,7 @@ function initMap()
                 position:props.coords,
                 icon:props.icon,
                 map:map,
+                draggable:true
                 
                 // icon:props.icon
             });

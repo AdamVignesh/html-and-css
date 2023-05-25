@@ -18,14 +18,25 @@ superHeros.forEach((hero)=>
 
 // Set card content
         card.innerHTML = `
-            <img src="${res.data.results[0].thumbnail.path}.jpg" class="card-img-top" alt="Card image">
-            <div class="card-body">
-                <h5 class="card-title">${res.data.results[0].name}</h5>
-                <p class="card-text">${res.data.results[0].description}</p>
-                <a href="#" class="btn btn-primary">Read More</a>
-            </div>
+          <img src="${res.data.results[0].thumbnail.path}.jpg" class="card-img-top" alt="Image">
+          <div class="card-img-overlay col-lg-12 col-md-12 col-sm-12">
+            <h5 class="card-title">${res.data.results[0].name}</h5>
+            <p class="card-text">${res.data.results[0].description}</p>
+          </div>
             `;
         
+// org code
+
+    //  <img src="${res.data.results[0].thumbnail.path}.jpg" class="card-img-top" alt="Card image">
+    //          <div class="card-body">
+    //              <h5 class="card-title">${res.data.results[0].name}</h5>
+    //              <p class="card-text">${res.data.results[0].description}</p>
+    //              <a href="#" class="btn btn-primary">Read More</a>
+    //          </div>
+//end
+
+
+
 // Set card ID
         card.id = 'hero';
 
