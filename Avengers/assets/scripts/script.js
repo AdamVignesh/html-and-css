@@ -69,5 +69,101 @@ function initMap()
         });
     }
 
+
+    //call this to change thanos location at regular intervals
+     setInterval(changeLoc,10000);
+    
+    const maxLat = 90;
+    const minLat = -90;
+    const maxLng = 180;
+    const minLng = -180;
+
+    let newLat = 0;
+    let newLng = 0; 
+    console.log("newlat"+newLat);
+    console.log("newlng"+newLng);
+    let thanosMarker;
+    let flag =0;
+    markThanos();
+    function randomLatLng()
+    {
+        newLat = Math.random() * (maxLat - minLat) + minLat;
+        newLng = Math.random() * (maxLng - minLng) + minLng;
+        console.log("newlat"+newLat);
+        console.log("newlng"+newLng);
+    }
+    function changeLoc()
+    {
+        flag = 0;
+        randomLatLng();
+        console.log("in change loc");
+        thanosMarker.setPosition(new google.maps.LatLng(newLat, newLng));
+
+        infinityStones.forEach((stone)=>
+        {
+            var differenceInDistance = calculateDistance(newLat,newLng,stone.coords.lat,stone.coords.lng);
+            differenceInDistance =  Math.round(differenceInDistance);
+            if(differenceInDistance < 7500 )
+            {
+                flag =1;
+            }
+            console.log(differenceInDistance);
+        });
+        if(flag)
+        {
+            alert("Thanos alert");
+        }
+
+    }
+
+    // markThanos();
+    function markThanos()
+    {
+        
+        console.log("in thanos marker");
+        
+        randomLatLng();
+            thanosMarker = new google.maps.Marker({
+            position:{lat:newLat,lng:newLng},
+            icon:{url:"assets/images/bot.png", scaledSize:iconSize},
+            map:map,
+            draggable:true
+        });
+
+        // thanosMarker.setPosition(new google.maps.LatLng(newLat, newLng));
+    }
+
+
+    function calculateDistance(lat1, lon1, lat2, lon2) {
+        const earthRadius = 6371; // Radius of the Earth in kilometers
+      
+        // Convert latitude and longitude to radians
+        const latRad1 = toRadians(lat1);
+        const lonRad1 = toRadians(lon1);
+        const latRad2 = toRadians(lat2);
+        const lonRad2 = toRadians(lon2);
+      
+        // Calculate the differences in latitude and longitude
+        const deltaLat = latRad2 - latRad1;
+        const deltaLon = lonRad2 - lonRad1;
+      
+        // Calculate the distance using the Haversine formula
+        const a =
+          Math.sin(deltaLat / 2) ** 2 +
+          Math.cos(latRad1) * Math.cos(latRad2) * Math.sin(deltaLon / 2) ** 2;
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        const distance = earthRadius * c;
+      
+        return distance;
+      }
+      
+      // Helper function to convert degrees to radians
+      function toRadians(degrees) {
+        return degrees * (Math.PI / 180);
+      }
+      
+
+
+
 }
 

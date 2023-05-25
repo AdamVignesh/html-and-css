@@ -54,8 +54,8 @@ superHeros.forEach((hero)=>
 
 function getChar(name)
 {
-    const publicKey = 'bc5cf50cbc5636e486646166beb3cb1c';
-    const hashKey = 'd6631ff85e2e31e6640211c03adf7bf6';
+    const publicKey = '38e1ffdaeaa9b9bef76cae16bc306f07';
+    const hashKey = '50b69e3db7031ec68231ea6c05198f40';
 
     const api = `https://gateway.marvel.com:443/v1/public/characters?name=${name}&apikey=${publicKey}&hash=${hashKey}&ts=1684993946733`;
 

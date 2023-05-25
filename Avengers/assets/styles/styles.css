@@ -3,12 +3,18 @@
     height:600px;
     width: 100%;
 }
-
+*
+{
+  margin:0;
+  padding:0;
+}
 
 body{
     background-image: url("../images/bg.webp");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
+    overflow-x: hidden;
+    /* background-size: contain; */
     background-position: center;
     /* background-size: contain; */
     /* width: 900px; */
