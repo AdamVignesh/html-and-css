@@ -71,7 +71,7 @@ function initMap()
 
 
     //call this to change thanos location at regular intervals
-     setInterval(changeLoc,10000);
+     setInterval(changeLoc,30000);
     
     const maxLat = 90;
     const minLat = -90;
@@ -103,7 +103,7 @@ function initMap()
         {
             var differenceInDistance = calculateDistance(newLat,newLng,stone.coords.lat,stone.coords.lng);
             differenceInDistance =  Math.round(differenceInDistance);
-            if(differenceInDistance < 7500 )
+            if(differenceInDistance < 7000 )
             {
                 flag =1;
             }
@@ -112,6 +112,7 @@ function initMap()
         if(flag)
         {
             alert("Thanos alert");
+            flag=0;
         }
 
     }
