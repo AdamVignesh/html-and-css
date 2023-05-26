@@ -126,7 +126,7 @@ function initMap()
         randomLatLng();
             thanosMarker = new google.maps.Marker({
             position:{lat:newLat,lng:newLng},
-            icon:{url:"assets/images/bot.png", scaledSize:iconSize},
+            icon:{url:"assets/images/thanos.png", scaledSize:iconSize},
             map:map,
             draggable:true
         });
